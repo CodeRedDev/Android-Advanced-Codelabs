@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 
-private val YES = 0
-private val NO = 1
+private const val YES = 0
+private const val NO = 1
 
 class SimpleFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,5 +49,11 @@ class SimpleFragment : Fragment() {
         }
 
         return rootView
+    }
+
+    companion object {
+        fun newInstance(): SimpleFragment {
+            return SimpleFragment()
+        }
     }
 }
