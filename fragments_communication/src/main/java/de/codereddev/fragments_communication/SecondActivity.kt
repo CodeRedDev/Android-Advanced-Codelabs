@@ -1,4 +1,4 @@
-package de.codereddev.fragments
+package de.codereddev.fragments_communication
 
 import android.os.Bundle
 import android.widget.Button

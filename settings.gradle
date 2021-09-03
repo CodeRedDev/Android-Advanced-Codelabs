@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Advanced Codelabs"
 include ':app'
 include ':fragments'
+include ':fragments_communication'

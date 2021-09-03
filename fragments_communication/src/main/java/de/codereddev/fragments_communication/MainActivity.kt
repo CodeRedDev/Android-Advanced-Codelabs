@@ -1,4 +1,4 @@
-package de.codereddev.fragments
+package de.codereddev.fragments_communication
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,4 +15,5 @@ class MainActivity : BasicSongActivity() {
             startActivity(Intent(this, SecondActivity::class.java))
         }
     }
+
 }

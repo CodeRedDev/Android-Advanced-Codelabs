@@ -7,7 +7,7 @@ android {
     compileSdk 30
 
     defaultConfig {
-        applicationId "de.codereddev.fragments"
+        applicationId "de.codereddev.fragments_communication"
         minSdk 22
         targetSdk 30
         versionCode 1

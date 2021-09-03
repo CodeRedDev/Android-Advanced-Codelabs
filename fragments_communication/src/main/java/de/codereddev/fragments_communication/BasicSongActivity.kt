@@ -1,14 +1,17 @@
-package de.codereddev.fragments
+package de.codereddev.fragments_communication
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 private const val STATE_FRAGMENT = "state_of_fragment"
 
-abstract class BasicSongActivity : AppCompatActivity() {
+abstract class BasicSongActivity : AppCompatActivity(), OnFragmentInteractionListener {
     protected var isFragmentDisplayed = false
     protected lateinit var fragmentToggleButton: Button
+
+    protected var radioButtonChoice = SimpleFragment.NONE
 
     abstract val layoutResource:Int
 
@@ -47,9 +50,14 @@ abstract class BasicSongActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
+    override fun onRadioButtonChoice(choice: Int) {
+        radioButtonChoice = choice
+        Toast.makeText(this, "Choice is $choice", Toast.LENGTH_SHORT).show()
+    }
+
     private fun displayFragment() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container, SimpleFragment.newInstance())
+            .add(R.id.fragment_container, SimpleFragment.newInstance(radioButtonChoice))
             .addToBackStack(null)
             .commit()
         fragmentToggleButton.setText(R.string.close)
