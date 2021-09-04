@@ -52,7 +52,11 @@ abstract class BasicSongActivity : AppCompatActivity(), OnFragmentInteractionLis
 
     override fun onRadioButtonChoice(choice: Int) {
         radioButtonChoice = choice
-        Toast.makeText(this, "Choice is $choice", Toast.LENGTH_SHORT).show()
+        val choiceText = when (radioButtonChoice) {
+            SimpleFragment.YES -> getString(R.string.yes)
+            else -> getString(R.string.no)
+        }
+        Toast.makeText(this, "Choice is $choiceText", Toast.LENGTH_SHORT).show()
     }
 
     private fun displayFragment() {
