@@ -1,4 +1,4 @@
-package de.codereddev.advancedcodelabs
+package de.codereddev.appwidgetsample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
